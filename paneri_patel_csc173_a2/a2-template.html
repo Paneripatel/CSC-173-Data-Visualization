@@ -1,0 +1,303 @@
+<html xml:lang="en" lang="en">
+  <head>
+    <title>Microsoft Malware dataset Visualization</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        margin: 0 auto 0 auto;
+        padding: 0;
+        background-color: #33333f;
+        width: 840px;
+        font-family: 'Avenir', 'Avenir Next', Helvetica Neue, Arial;
+        font-size: 0.95em;
+      }
+      a,
+      a:visited {
+        text-decoration: none;
+        color: #7533f4;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: #f4b014;
+      }
+      img,
+      a.img,
+      a:hover.img {
+        border: none;
+      }
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 800px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: #492a7c;
+        background-color: inherit;
+        font-weight: normal;
+        padding: 0 0 5px 0;
+        margin: 15px 0 0 0;
+        border: none;
+        clear: right;
+      }
+      h1 {
+        font-size: 18pt;
+        margin: 5px 0 10px 0;
+        line-height: 28px;
+      }
+      h2 {
+        font-size: 14pt;
+        margin: 30px 0 15px 0;
+        letter-spacing: 0.01em;
+        border-bottom: 1px solid #ccc;
+        line-height: 20px;
+      }
+      h3 {
+        font-size: 13pt;
+      }
+      h4 {
+        font-size: 12pt;
+      }
+      h5 {
+        font-size: 11pt;
+      }
+      p {
+        margin: 0 0 10px 0;
+      }
+      hr {
+        border: 0px;
+        border-top: 1px solid #ccc;
+        height: 0px;
+      }
+      ol {
+        margin: 1em;
+      }
+      .content {
+        margin: 0;
+        padding: 15px 20px;
+        background-color: #ffffff;
+      }
+      .article {
+        line-height: 1.5em;
+      }
+      .entry {
+        border-top: 1px solid #ddd;
+        padding-top: 2px;
+        margin-top: 3em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="content">
+      <section>
+        <h1>Exploratory Data Analysis Of Dataset</h1>
+
+        <p>
+          <strong>Paneri Patel</strong>
+        </p>
+      </section>
+
+      <section>
+        <h2>Dataset</h2>
+        <p>
+          Malware remains a well-organized, well-funded market dedicated to
+          circumventing standard security solutions. Once a computer has been
+          infected with malware, thieves can use it to harm consumers and
+          businesses in a variety of ways. <br />Microsoft, which has over one
+          billion commercial and consumer customers, takes security very
+          seriously and is heavily involved in enhancing it. <br />Microsoft is
+          challenging the data science community to develop algorithms to
+          anticipate if a system will be infected with malware in the near
+          future as part of their larger goal. Microsoft is giving Kagglers with
+          an unparalleled malware dataset, similar to their earlier Malware
+          Challenge, to stimulate open-source advancement on effective
+          approaches for predicting malware occurrences.
+        </p>
+        <p>
+          The data is available online at:
+          <strong>
+            <a href="https://www.kaggle.com/c/microsoft-malware-prediction/data"
+              >https://www.kaggle.com/c/microsoft-malware-prediction/data</a
+            >
+          </strong>
+        </p>
+      </section>
+
+      <section>
+        <h2>Initial Analysis Questions</h2>
+        <ol>
+          <li>Which Microsoft product is most prone to malware attacks?</li>
+          <li>
+            Does installing antivirus products helps to prevent malware attacks?
+          </li>
+          <li>
+            Do we need firewall or just Antivirus products are sufficient to
+            prevent malware attacks?
+          </li>
+          <li>
+            Does SmartScreen type plays any role in getting malware attacks?
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Discoveries and Insights</h2>
+        <div class="entry">
+          <img src="sheet1.png" />
+          <p class="caption">
+            I believed I needed to figure out which attributes contribute the
+            most to a dataset before diving into data exploration. It determines
+            the significance of each attribute in a dataset. So, in the
+            beginning, I had 85 attributes in my dataset. I came up with 39 of
+            the most crucial characteristics. The top 39 traits are plotted
+            against their importance scores in the diagram above.
+          </p>
+        </div>
+
+        <div class="entry">
+          <img src="sheet2.png" />
+          <p class="caption">
+            The graphic above depicts how qualities are related to one another.
+            It depicts correlations between features that can be used for
+            further exploration.
+          </p>
+        </div>
+
+        <div class="entry">
+          <img src="sheet3.png" />
+          <p class="caption">
+            Even if they are protected, this visualization indicates which
+            Microsoft Application versions are most vulnerable to Malware
+            attacks. The average of malware detections is shown by the
+            application version, color, and size. AppVersion assigns labels to
+            the marks. IsProtected is used to filter data.
+          </p>
+        </div>
+
+        <div class="entry">
+          <img src="sheet4.png" />
+          <p class="caption">
+            For each product name, the average of HasDetections is shown in the
+            image above. The color represents information about the product
+            name. The data is filtered using the Firewall's average, which only
+            preserves non-null values.
+          </p>
+        </div>
+
+        <div class="entry">
+          <img src="sheet5.png" />
+          <p class="caption">
+            This graph shows the mean malware detection and protection for each
+            Platform. Avg HasDetections & Avg IsProtected are highlighted in
+            color.
+          </p>
+        </div>
+
+        <div class="entry">
+          <img src="sheet6.png" />
+          <p class="caption">
+            I wanted to know how SmartScreen is related to malware detection
+            because it was one of the major attributes I discovered through data
+            wrangling. The average number of HasDetections for each Smart Screen
+            is shown in the image. SmartScreen's details are shown in color.
+            SmartScreen has been used to filter out Null values from the view.
+          </p>
+        </div>
+
+        <div class="entry">
+          <img src="sheet7.png" />
+          <p class="caption">
+            The view is filtered on SmartScreen, which excludes Null values,
+            based on the average of ScreenSize and HasDetections for each
+            SmartScreen. We can deduce from the above image that the larger the
+            SmartScreen, the more malware attacks there will be.
+          </p>
+        </div>
+
+        <div class="entry">
+          <img src="sheet8.png" />
+          <p class="caption">
+            Each Sku Edition's IsGamer and Has Detections are shown in the
+            image. The color scheme reveals information regarding IsGamer and
+            Has Detections. Sku Edition has been used to filter the view, which
+            excludes Invalid. We can see that being a gamer has a high risk of
+            malware attack if we eliminate specific outliers like the Education
+            edition.
+          </p>
+        </div>
+
+        <div class="entry">
+          <img src="sheet9.png" />
+          <p class="caption">
+            Installing a firewall does not help with malware threats in the sku
+            edition, as seen in the image. This revelation may come as a shock
+            because most people believe that a firewall protects their system
+            against malware attacks. For each Platform, the average Firewall and
+            average HasDetections are displayed. On Microsoft Editions, the data
+            is filtered.
+          </p>
+        </div>
+
+        <div class="entry">
+          <img src="sheet10.png" />
+          <p class="caption">
+            Affirmative, the answer to the above question is yes, because the
+            greater the number of AntiVirus ProductStatesIdentifier, the lower
+            the number of Malware Detections. For the number of AntiVirus
+            Products Installed, the average of AntiVirus ProductStatesIdentifier
+            and the average of HasDetections. AntiVirusProductStatesIdentifier
+            is used to filter the view, which only keeps non-Null values.
+          </p>
+        </div>
+
+        <div class="entry">
+          <img src="sheet11.png" />
+          <p class="caption">
+            We know that of all Microsoft platforms, Windows 8 had the greatest
+            malware detection. As a result, I dug deeper into the Windows 8
+            platform. The Avg. IsProtected and HasDetections trends for
+            AntiVirus Products Installed by Platform. Avg. IsProtected and
+            HasDetections are highlighted in color. Platform and AntiVirus
+            Products Installed filter the results. We can't really tell what
+            makes Windows 8 so vulnerable to malware assaults based on the above
+            image. Furthermore, malware attacks were highest when the most
+            Antivirus solutions were installed. That means there's a probability
+            that if we go deeper into the 5 Antivirus products in Windows 8,
+            we'll find some more concrete results.
+          </p>
+        </div>
+
+        <div class="entry">
+          <img src="sheet12.png" />
+          <p class="caption">
+            The average of Has Detections for AV Products Installed for each
+            Platform is plotted. The view is limited to non-Null values due to
+            the AV Products Installed filter.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h3>Summary</h3>
+          <p>
+            This aided me in gaining some concrete insights from my dataset.
+            When working with enormous datasets, Pandas libraries are extremely
+            useful and quick. I discovered some fascinating information and
+            connections that can aid me in my research. The most relevant
+            attributes for exploring HasDetections in this dataset are
+            IsProtected, SmartScreen, SmartScreenSize, AntiVirusProducts, and
+            Antivirus State Identifiers. Surprisingly, firewalls do not give
+            much protection against infection.
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
